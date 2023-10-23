@@ -1,16 +1,5 @@
 # 矩阵运算
-```python
 
-a = torch.randn(10000, 1000)
-b = torch.randn(1000,2000)
-
-device = torch.device("cuda")
-
-a_c = a.to(device)
-b_c = b.to(device)
-
-c = torch.matmul(a_c, b_c)
-```
 
 # 求导
 ```python
