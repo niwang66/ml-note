@@ -13,7 +13,33 @@ c = torch.matmul(a_c, b_c)
 ```
 
 # 求导
+```python
+x = torch.randn(10, 3)  #输入，10个数据，3个特征
+y = torch.randn(10, 2)  #输出，10个数据，2个
 
+# Build a fully connected layer.
+linear = nn.Linear(3, 2) #输入3个特征，输出2维
+print ('w: ', linear.weight) # w是2*3得矩阵（偏置），因为一个1*3的输出，乘以3*2的矩阵，才能得到一个1*2的结果
+print ('b: ', linear.bias) #偏置是1*2，跟结果保持一致
+
+# Build loss function and optimizer.
+criterion = nn.MSELoss()
+optimizer = torch.optim.SGD(linear.parameters(), lr=0.01)
+
+# Forward pass.
+pred = linear(x) # 算预测值
+
+# Compute loss.
+loss = criterion(pred, y) #计算损失
+print('loss: ', loss.item())
+
+# Backward pass.
+loss.backward() 
+
+# Print out the gradients.
+print ('dL/dw: ', linear.weight.grad) 
+print ('dL/db: ', linear.bias.grad)
+```
 
 # 模型
 
