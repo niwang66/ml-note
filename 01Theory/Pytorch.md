@@ -76,13 +76,13 @@ optimizer = torch.optim.SGD(model.parameters(), lr=0.01) # model.parameters()自
   
 # 训练100轮  
 for epoch in range(100):  
-y_pred = model(x_data) # forward:predict  
-loss = criterion(y_pred, y_data) # forward: loss  
-print(epoch, loss.item())  
+	y_pred = model(x_data) # forward:predict  
+	loss = criterion(y_pred, y_data) # forward: loss  
+	print(epoch, loss.item())  
   
-optimizer.zero_grad() # 非常重要  
-loss.backward() # backward: autograd，自动计算梯度  
-optimizer.step() # update 参数，即更新w和b的值  
+	optimizer.zero_grad() # 非常重要  
+	loss.backward() # backward: autograd，自动计算梯度  
+	optimizer.step() # update 参数，即更新w和b的值  
   
 # 打印训练出的参数  
 print('w = ', model.linear.weight.item())  
