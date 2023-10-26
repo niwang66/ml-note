@@ -50,3 +50,7 @@ https://github.com/ljpzzz/machinelearning
 cs231n CV
 
 cs224n NLP P1-P5，P8，P9， P11
+
+
+# kaggle
+https://www.kaggle.com/learn-guide/natural-language-processing
