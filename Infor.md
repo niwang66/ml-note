@@ -1,10 +1,10 @@
+# 计划
+RNN, LSTM, Seq2Seq, Attention, Transformer, BERT
+
 # 深兰老师
 
-## 深度学习刘老师
-B04
 
 ## C++ 李老师
-19:30-21:30
 
 
 ##  Python马老师
