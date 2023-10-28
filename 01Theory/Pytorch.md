@@ -32,7 +32,6 @@ print ('dL/db: ', linear.bias.grad)
 
 # 模型
 
-
 ```python 
 def __init__(self, in_features: int, out_features: int, bias: bool = True,  
 device=None, dtype=None) -> None:
