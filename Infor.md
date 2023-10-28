@@ -1,5 +1,6 @@
 # 计划
 RNN, LSTM, Seq2Seq, Attention, Transformer, BERT
+Word2Vec
 
 # 深兰老师
 
