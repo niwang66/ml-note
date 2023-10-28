@@ -1,10 +1,11 @@
+# 计划
+RNN, LSTM, Seq2Seq, Attention, Transformer, BERT
+Word2Vec
+
 # 深兰老师
 
-## 深度学习刘老师
-B04
 
 ## C++ 李老师
-19:30-21:30
 
 
 ##  Python马老师
@@ -50,9 +51,7 @@ https://github.com/ljpzzz/machinelearning
 cs231n CV
 
 cs224n NLP P1-P5，P8，P9， P11
+Address Jinqiao Town Pudong New Area Shanghai, 201206 China_
 
-
-# Address
-
-
-Jinqiao Town Pudong New Area Shanghai, 201206 China_
+# kaggle
+https://www.kaggle.com/learn-guide/natural-language-processing

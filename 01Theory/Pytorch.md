@@ -1,3 +1,13 @@
+# 函数
+
+torch.clamp_min_方法设置一个下限min，tensor中有元素小于这个值, 就把对应的值赋为min
+```python
+x = torch.tensor([[1., 2. ,3. ,4., 5.]])
+x = x.clamp_min(3)  #[3,3,3,4,5]
+x.mean() #平均数3
+```
+
+
 # 矩阵运算
 
 
