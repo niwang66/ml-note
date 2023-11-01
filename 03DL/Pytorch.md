@@ -1,5 +1,6 @@
+https://blog.csdn.net/CltCj/article/details/120060543
 
-李沐动手深度学习课程主页：https://courses.d2l.ai/zh-v2/
+李沐：https://courses.d2l.ai/zh-v2/
 
 教材：https://zh-v2.d2l.ai/
 
