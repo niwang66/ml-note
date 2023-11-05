@@ -1,3 +1,8 @@
+
+# 工具
+wisdom 可视化工具
+np.meshgrdi
+
 # 函数
 
 torch.clamp_min_方法设置一个下限min，tensor中有元素小于这个值, 就把对应的值赋为min
