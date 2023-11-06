@@ -21,10 +21,10 @@ class MyDataSet(Dataset):
 ## DataLoader
 ```python
 from torch.utils.data import DataLoader
-batch_size=4表示每次取四个数据
-shuffle= True表示开启数据集随机重排，即每次取完数据之后，打乱剩余数据的顺序，然后再进行下一次取
-num_workers=0表示在主进程中加载数据而不使用任何额外的子进程，如果大于0，表示开启多个进程，进程越多，处理数据的速度越快，但是会使电脑性能下降，占用更多的内存
-drop_last=False表示不丢弃最后一个批次，假设我数据集有10个数据，我的batch_size=3，即每次取三个数据，那么我最后一次只有一个数据能取，如果设置为true，则不丢弃这个包含1个数据的子集数据，反之则丢弃
+# batch_size=4表示每次取四个数据
+# shuffle= True表示开启数据集随机重排，即每次取完数据之后，打乱剩余数据的顺序，然后再进行下一次取
+# num_workers=0表示在主进程中加载数据而不使用任何额外的子进程，如果大于0，表示开启多个进程，进程越多，处理数据的速度越快，但是会使电脑性能下降，占用更多的内存
+# drop_last=False表示不丢弃最后一个批次，假设我数据集有10个数据，我的batch_size=3，即每次取三个数据，那么我最后一次只有一个数据能取，如果设置为true，则不丢弃这个包含1个数据的子集数据，反之则丢弃
 test_load = DataLoader(dataset=test_data, batch_size=4 , shuffle= True, num_workers=0,drop_last=False)
 ```
 
