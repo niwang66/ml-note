@@ -122,6 +122,10 @@ x_test = torch.tensor([[4.0]])
 print('y_pred = ', model(x_test))
 ```
 
+# 损失函数
+## 交叉熵损伤
+刘二大人 L9-21
+
 
 
 # 项目
