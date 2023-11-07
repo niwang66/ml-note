@@ -121,9 +121,36 @@ print('b = ', model.linear.bias.item())
 x_test = torch.tensor([[4.0]])  
 print('y_pred = ', model(x_test))
 ```
+# 梯度
+x（向量）是叶子节点，z（向量）是中间节点，y（标量）是输出节点
+Tensor的属性，requires_grad， grad微分值，grad_fn微分函数
+- 当叶子节点的requires_grad为True时，信息流过该节点，所有中间节点的requires_grad都变为true
+- 只要在输出节点调用backward(), Pytorch就会自动更新叶子节点的微分值，存储在叶子节点的grad属性里
+- 只有叶子节点的grad属性能被更新
+## 梯度-前向传播
+```python
+x = torch.ones(2)
+x.requires_grad=True
+z= 4*x
+tensor([4., 4.], grad_fn=<MulBackward0>) # tensor是一个矢量
+y=z.norm()
+tensor(5.6569, grad_fn=<LinalgVectorNormBackward0>) # tensor是一个标量
+```
+## 梯度-反向传播
+tensor做计算都会产生计算图，用于反向传播，计算梯度
+```python
+x.backward() # 报错grad can be implicitly created only for scalar outputs， 只能作用于标量
+y.backward()
+x.grad
+tensor([2.8284, 2.8284])
+z.grad
+y.grad
+```
+
 
 # 损失函数
 ## 交叉熵损伤
+用于多分类
 刘二大人 L9-21
 
 
