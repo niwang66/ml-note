@@ -3,6 +3,19 @@
 wisdom 可视化工具
 np.meshgrdi
 
+# 变量
+tensor不能反向传播，variable可以反向传播
+## Tensor (张量)
+
+
+## Variable（变量）
+variable是封装了tensor并提供自动求导功能的对象
+```python
+from torch.autograd import Variable
+
+```
+
+
 # 数据
 ## DataSet
 ```python
