@@ -3,6 +3,45 @@
 wisdom 可视化工具
 np.meshgrdi
 
+# 变量
+tensor不能反向传播，variable可以反向传播
+## Tensor (张量)
+
+
+## Variable（变量）
+variable是封装了tensor并提供自动求导功能的对象
+```python
+from torch.autograd import Variable
+
+```
+
+
+# 数据
+## DataSet
+```python
+class MyDataSet(Dataset):
+    def __init__(self):
+        self.sample_list = ...
+ 
+    def __getitem__(self, index):
+        x= ...
+        y= ...
+        return x, y
+ 
+    def __len__(self):
+        return len(self.sample_list)
+```
+## DataLoader
+```python
+from torch.utils.data import DataLoader
+# batch_size=4表示每次取四个数据
+# shuffle= True表示开启数据集随机重排，即每次取完数据之后，打乱剩余数据的顺序，然后再进行下一次取
+# num_workers=0表示在主进程中加载数据而不使用任何额外的子进程，如果大于0，表示开启多个进程，进程越多，处理数据的速度越快，但是会使电脑性能下降，占用更多的内存
+# drop_last=False表示不丢弃最后一个批次，假设我数据集有10个数据，我的batch_size=3，即每次取三个数据，那么我最后一次只有一个数据能取，如果设置为true，则不丢弃这个包含1个数据的子集数据，反之则丢弃
+test_load = DataLoader(dataset=test_data, batch_size=4 , shuffle= True, num_workers=0,drop_last=False)
+```
+
+
 # 函数
 
 torch.clamp_min_方法设置一个下限min，tensor中有元素小于这个值, 就把对应的值赋为min
@@ -95,6 +134,37 @@ print('b = ', model.linear.bias.item())
 x_test = torch.tensor([[4.0]])  
 print('y_pred = ', model(x_test))
 ```
+# 梯度
+x（向量）是叶子节点，z（向量）是中间节点，y（标量）是输出节点
+Tensor的属性，requires_grad， grad微分值，grad_fn微分函数
+- 当叶子节点的requires_grad为True时，信息流过该节点，所有中间节点的requires_grad都变为true
+- 只要在输出节点调用backward(), Pytorch就会自动更新叶子节点的微分值，存储在叶子节点的grad属性里
+- 只有叶子节点的grad属性能被更新
+## 梯度-前向传播
+```python
+x = torch.ones(2)
+x.requires_grad=True
+z= 4*x
+tensor([4., 4.], grad_fn=<MulBackward0>) # tensor是一个矢量
+y=z.norm()
+tensor(5.6569, grad_fn=<LinalgVectorNormBackward0>) # tensor是一个标量
+```
+## 梯度-反向传播
+tensor做计算都会产生计算图，用于反向传播，计算梯度
+```python
+x.backward() # 报错grad can be implicitly created only for scalar outputs， 只能作用于标量
+y.backward()
+x.grad
+tensor([2.8284, 2.8284])
+z.grad
+y.grad
+```
+
+
+# 损失函数
+## 交叉熵损伤
+用于多分类
+刘二大人 L9-21
 
 
 
