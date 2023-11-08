@@ -3,4 +3,5 @@
 
 # seq2seq
 2014 Kyunghyun Cho  Learning Phrase Representations using RNN Encoder–Decoderfor Statistical Machine Translation
+2015 Luong Attention
 里面是GRU
